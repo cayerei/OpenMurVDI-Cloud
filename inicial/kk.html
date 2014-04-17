@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#introducción">Introducción</a><ul>
+<li><a href="#marco-de-realización">Marco de realización</a></li>
+<li><a href="#motivación-técnica">Motivación técnica</a></li>
+<li><a href="#objetivos-generales">Objetivos generales</a></li>
+</ul></li>
+<li><a href="#objetivos-específicos">Objetivos específicos</a><ul>
+<li><a href="#lineas-directrices-principales">Lineas directrices principales</a></li>
+<li><a href="#objetivos-específicos-1">Objetivos específicos</a></li>
+<li><a href="#objetivos-conseguidos">Objetivos conseguidos</a></li>
+</ul></li>
+<li><a href="#descripción-del-proyecto">Descripción del proyecto</a><ul>
+<li><a href="#clientes-ligeros-o-thin-clients">Clientes ligeros o Thin Clients</a></li>
+<li><a href="#cloud-computing-iaas-vs-daas">Cloud Computing: IaaS vs DaaS</a><ul>
+<li><a href="#iaas-infraestructure-as-a-service">IaaS: Infraestructure as a Service</a></li>
+<li><a href="#daas-desktop-as-service-as-a-service">DaaS: Desktop as Service as a Service</a></li>
+</ul></li>
+<li><a href="#vdi-virtualización-de-escritorios">VDI (Virtualización de Escritorios)</a></li>
+</ul></li>
+<li><a href="#antecedentes-y-escenario-inicial">Antecedentes y escenario inicial</a><ul>
+<li><a href="#proyectos-anteriores">Proyectos anteriores</a></li>
+<li><a href="#escenario-inicial">Escenario inicial</a></li>
+</ul></li>
+</ul>
+</div>
+<h1 id="introducción"><a href="#TOC">Introducción</a></h1>
+<div class="figure">
+<img src="./openstack.png" alt="Openstack" /><p class="caption">Openstack</p>
+</div>
+<h2 id="marco-de-realización"><a href="#TOC">Marco de realización</a></h2>
+<p>El <strong>IES Ingeniero de la Cierva (Murcia)</strong>, a través de su Departamento de Informática y Comunicaciones, durante el curso 2013-2014 ha llevado a cabo este proyecto, denominado <strong><em>OpenMurVdi: Despliegue de infraestructura de clientes ligeros orientados a Cloud Computing</em></strong>, al amparo de la convocatoria de realización de proyectos de innovación de formación profesional convocada, de forma conjunta por:</p>
+<ol style="list-style-type: decimal">
+<li><p>La Dirección General de Recursos Humanos y Calidad Educativa</p></li>
+<li><p>La Dirección General de Formación Profesional y Enseñanzas de Personas Adultas</p></li>
+</ol>
+<p>a través de la <em>Resolución de 25 de julio de 2013 por la que se regula el proceso de selección y de seguimiento para la realización de proyectos de innovación educativa realizados por el profesorado de formación profesional de la región de Murcia</em>.</p>
+<p>Asimismo la <em>Resolución conjunta de 28 de noviembre de 2013</em> de ambas direccione generales resuelve finalmente y de forma favorable para que se subvencione y desarrolle el presente proyecto si bien dotándole de un importe subvencionado de aproximadamente el 50% menos de lo inicialmente presupuestado.</p>
+<h2 id="motivación-técnica"><a href="#TOC">Motivación técnica</a></h2>
+<p>La principal motivación para el diseño y realización del presente proyecto, radica en:</p>
+<ol style="list-style-type: decimal">
+<li><p>La gran evolución que han venido experimentando, en los últimos años, las tecnologías orientándose éstas hacia la utilización tanto de recursos de datos y como de aplicaciones en la <em>nube</em>.</p></li>
+<li><p>La expansión exponencial que se ha producido en el uso de dispositivos ligeros o incluso de terminales móviles para la utilización de estos recursos.</p></li>
+<li><p>La necesidad, cada vez más imperiosa, en los centros educativos, de virtualizar, de forma centralizada, los sistemas tanto de explotación como de escritorio, para poder ampliar la vida útil del puesto de trabajo del usuario final.</p></li>
+<li><p>La existencia tanto en plataformas propietarias como libres de plataformas de creación y gestión de <em>Cloud</em> orientados a la virtualización centralizada.</p></li>
+<li><p>La gran reducción de costes al utilizar plataformas libres como <strong>OpenStack</strong> para la implantación de virtualización centralizada frente a soluciones propietarias como VMWare o Citrix.</p></li>
+<li><p>La carencia actual de sistemas de interconectividad en software libre que permitan, de forma ágil, desplegar infraestructuras de clientes ligeros con conectivdad a sistemas virtualizados en <em>Cloud Computing</em> u <em>Openstack</em></p></li>
+</ol>
+<h2 id="objetivos-generales"><a href="#TOC">Objetivos generales</a></h2>
+<p>Así este proyecto se diseña tanto para cubrir objetivos técnicos como objetivos didácticos:</p>
+<ol style="list-style-type: decimal">
+<li><p>Obtener experiencias reales y de buenas prácticas para la utilización de clientes ligeros con conectividad a recursos en una <em>nube privada o Cloud Privado</em> en el propio centro educativo.</p></li>
+<li><p>Profundizar sobre la utilización de tecnologías de virtualización de sistemas de escritorios en entornos de <em>Cloud Computing</em> a través de plataformas libres</p></li>
+<li><p>Desplegar una infraestructura de clientes ligeros en entorno VDI para la conectividad a sistemas alojados en el <em>Cloud</em></p></li>
+<li><p>Desarrollar e implantar software intermedio denominado <em>&quot;broker&quot;</em> con software libre</p></li>
+<li><p>Difundir las experiencias realizadas como la documentación técnica para su posterior reutilización por otros centros educativos u organismos interesados</p></li>
+</ol>
+<h1 id="objetivos-específicos"><a href="#TOC">Objetivos específicos</a></h1>
+<h2 id="lineas-directrices-principales"><a href="#TOC">Lineas directrices principales</a></h2>
+<p>Atendiendo a las bases técnicas iniciales, el proyecto se ha llevado a cabo en base a 4 líneas directrices principales:</p>
+<ol style="list-style-type: decimal">
+<li><p>Partir de una infraestructura IaaS libre ya implantada (OpenStack en nuestro caso) y convertirla a través de configuraciones y conectores en una plataforma DaaS orientada a virtualización de escritorios.</p></li>
+<li><p>Desarrollar y/o implantar un componente libre que sirva de punto de integración y que actúe de “broker” central como eje para las conexiones multiprotocolo de los clientes. Este componente será el que permita facilitar tanto a los administradores para la gestión, como a los usuarios para la utilización de la infraestructura basada en “Cloud” para VDI.</p></li>
+<li><p>Provisión de métodos para que los clientes tengan facilidades de elección “on the fly” de protocolos de acceso a sus escritorios virtualizados.</p></li>
+<li><p>Implantación y despliegue de gestor integral de escritorios virtuales para clientes ligeros VDI.</p></li>
+</ol>
+<p>Estas lineas directrices se corresponden fundamentalmente con la bases técnicas para dar una respuesta a las deficiencias detectadas en las soluciones existentes de software libre para el despliegue de infraestructuras de VDI.</p>
+<h2 id="objetivos-específicos-1"><a href="#TOC">Objetivos específicos</a></h2>
+<p>Los objetivos específicos planteados inicialmente se relacionan con las líneas directrices descritas y se pueden desglosar en:</p>
+<ol style="list-style-type: decimal">
+<li><p>Análisis exhaustivo y formación para profesores y alumnos en tecnologías de virtualización de escritorios y sus peculiaridades.</p></li>
+<li><p>Convertir, a través de configuraciones y conectores existentes, una plataforma ya existente de <em>Cloud Computing</em> basada en IaaS en una plataforma DaaS orientada a virtualización de escritorios VDI.</p></li>
+<li><p>Desarrollar y/o implantar un componente libre que sirva de punto de integración y que actúe de <em>broker</em> central como eje para las conexiones multiprotocolo de los clientes. Este componente será el que permita facilitar tanto a los administradores para la gestión, como a los usuarios para la utilización de la infraestructura basada en <em>Cloud</em> para VDI.</p></li>
+<li><p>Provisión de métodos para que los clientes tengan facilidades de protocolos de acceso a sus escritorios virtualizados.</p></li>
+<li><p>Utilización con los alumnos de la infraestructura DaaS obtenida a través del <em>broker</em> implantado.</p></li>
+<li><p>Experiencia de prueba de uso de conexión al <em>broker</em> implantado o desarrollado.</p></li>
+<li><p>Realización de experiencia de conectividad con clientes ligeros tanto software como hardware (Ejemplo: dispositivos móviles, tablets, clientes ligeros tipo Raspberry Pi)</p></li>
+</ol>
+<h2 id="objetivos-conseguidos"><a href="#TOC">Objetivos conseguidos</a></h2>
+<p>De los siete objetivos planteados al iniciar el proyecto, al finalizar éste se han conseguido seis de forma completa y uno de forma parcial.</p>
+<p>Unicamente <strong>no se ha podido realizar la formación a profesores a través de un curso de formación</strong> debido al <strong>ajuste económico</strong> realizado como consecuencia de la reducción del presupuesto a la hora de la adjudicación del proyecto.</p>
+<p>Este objetivo de formación se ha sustituido por <strong>tareas de investigación y auto estudio</strong> por parte de los profesores participantes.</p>
+<p>Destacar que, aunque estas tareas no han podido suplir, al cien por cien, lo que se hubiese conseguido con un curso de formación específico, tanto para los profesores participantes en el proyecto como para los demás profesores del departamento, se ha podido llevar a término el proyecto gracias a la mayor dedicación en horas de investigación propia de los miembros participantes.</p>
+<h1 id="descripción-del-proyecto"><a href="#TOC">Descripción del proyecto</a></h1>
+<p>Este proyecto denominado <em>OpenMurVdi: Despliegue de infraestructura de clientes ligeros orientados a Cloud-Computing</em> se encuadra dentro del marco tecnológico actual dónde se prima la utilización de dispositivos clientes ubicuos y de capacidad de procesamiento limitado junto con la conectividad a recursos de datos y de procesamiento de gran productividad en la <em>nube</em>.</p>
+<p>En este sentido las tecnologías <em>orientadas a la nube</em> y la expansión de dispositivos y hardware de clientes móviles y ligeros, se ven, sin embargo, contrapuestas a la creciente demanda de recursos, en la parte cliente, de los nuevos sistemas operativos orientados al usuario.</p>
+<p>Para salvar esta brecha entre dispositivos ligeros o <em>Thin Clients</em> y la alta demanda de recursos de los sistemas operativos de escritorio modernos (MS Windows7-8, MS Windows Server, Ubuntu 14.04, Ubuntu Server...) se plantea utilizar una infraestructura híbrida de <em>Cloud Computing</em> dónde se ejecuten remotamente los sistemas operativos pesados complementada con un despliegue de clientes ligeros (con mínimos recursos: Raspberry Pi, equipos antiguos, tecnologías móviles) que sirvan de meros dispositivos de conexión con estos sistemas operativos en el <em>Cloud</em>.</p>
+<p>Así este proyecto se vertebra sobre <strong>tres tecnologías complementarias</strong>:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Clientes ligeros o Thin Clients</strong></p></li>
+<li><p><strong>Tecnología de <em>Cloud Computing</em> orientadas a <em>IaaS</em> o <em>DaaS</em></strong> dónde se ejecutan los sistemas operativos virtualizados</p></li>
+<li><p><strong>Tecnología de <em>VDI(Virtualización de Escritorios)</em></strong> que es la parte que permite al usuario conectarse con los sistemas operativos virtualizados.</p></li>
+</ol>
+<h2 id="clientes-ligeros-o-thin-clients"><a href="#TOC">Clientes ligeros o Thin Clients</a></h2>
+<p>Un cliente ligero (Thin Clients o slim client en inglés) es un ordenador cliente o un software de cliente en una arquitectura de red que depende primariamente del servidor central para las tareas de procesamiento, y se encarga principalmente en transportar la entrada y la salida entre el usuario y el servidor remoto, siendo totalmente dependiente del servidor.</p>
+<p>Ejemplos de posibles clientes ligeros: Raspberry Pi, móviles <em>smartphones</em>, tablets, sistemas operativos ligeros en equipos obsoletos, etc...</p>
+<p>En contraste, un cliente pesado realiza tanto procesamiento como le sea posible y transmite solamente los datos para las comunicaciones y el almacenamiento al servidor siendo autónomo incluso sin la presencia de servidor.</p>
+<h2 id="cloud-computing-iaas-vs-daas"><a href="#TOC">Cloud Computing: IaaS vs DaaS</a></h2>
+<h3 id="iaas-infraestructure-as-a-service"><a href="#TOC">IaaS: Infraestructure as a Service</a></h3>
+<p>La evolución de la infraestructura clásica de servidores físicos en las empresas, sustituyéndolos por servidores virtuales con ubicación en la propia empresa o Internet. Destaca en este ámbito la implementación comercial Amazon EC2 (Elastic Compute Cloud) y las implementaciones de software libre OpenSatck y Eucalyptus, que son compatibles con el API de Amazon EC2, pero que permiten un control total sobre la tecnología.</p>
+<h3 id="daas-desktop-as-service-as-a-service"><a href="#TOC">DaaS: Desktop as Service as a Service</a></h3>
+<p>Hace referencia a la arquitectura de cloud computing orientada a ofrecer a los clientes escritorios virtualizados como servicio. Funcionalmente es similar a VDI, pero en cuanto a terminología se centra más en las necesidades, requisitos e implantación de la parte servidor.</p>
+<h2 id="vdi-virtualización-de-escritorios"><a href="#TOC">VDI (Virtualización de Escritorios)</a></h2>
+<p>Esta parte junto al DaaS de la parte servidora es la parte que permite ofrecer a los usuarios la conectividad a los escritorios virtualizados en la nube.</p>
+<p>Se hace referencia al proceso de separación entre el escritorio, que engloba los datos y programas que utilizan los usuarios para trabajar, de la máquina física. El escritorio <em>virtualizado</em> es almacenado, por lo tanto, remotamente en la infraestrucura de la nube, implantada como DaaS, en lugar de en el disco duro del ordenador personal.</p>
+<p>Esto significa que, en este escenario, cuando los usuarios trabajan en su escritorio, todos sus programas, aplicaciones, procesos y datos se almacenan y ejecutan centralmente, permitiendo a los usuarios acceder remotamente a sus escritorios desde cualquier dispositivo capaz de conectarse remotamente al escritorio, tales como un portátil, PC, o cliente ligero.</p>
+<p>Un aspecto importante de este marco tecnológico es que se procede a virtualizar todo el escritorio para ofrecérselo a los clientes. De esta forma cada cliente ligero puede acceder de forma remota a su propio escritorio/sistema (o a varios de ellos) de manera diferenciada del resto de clientes.</p>
+<p>Además también se permite que el escritorio virtualizado pueda tener persistencia a lo largo de las distintas conexiones/desconexiones realizadas.</p>
+<h1 id="antecedentes-y-escenario-inicial"><a href="#TOC">Antecedentes y escenario inicial</a></h1>
+<h2 id="proyectos-anteriores"><a href="#TOC">Proyectos anteriores</a></h2>
+<p>El IES Ingeniero de la Cierva en colaboración con tres centros más:</p>
+<ul>
+<li><p>IES Los Albares (Cieza-Murcia)</p></li>
+<li><p>IES Gonzalo Nazareno (Dos Hermanas-Sevilla)</p></li>
+<li><p>IES La Campiña (Arahal-Sevilla)</p></li>
+</ul>
+<p>participó en el desarrollo y puesta en marcha del proyecto de innovación <em>“Implantación y puesta a punto de un cloud computing privado para despliegue de servicios en la nube”</em> al amparo de la convocatoria que realizó el Ministerio de Educación y Ciencia en la <em>Resolución de 5 de abril de 2011 de la Secretaría de Estado de Educación y Formación</em>.</p>
+<p>Este proyecto culminó satisfactoriamente en el tercer trimestre del curso 2011-2012 y como resultados destacables se pueden resaltar:</p>
+<ul>
+<li><p>Un análisis y comparativa de las distintas soluciones en software libre de <em>“Cloud Computing”</em></p></li>
+<li><p><strong>Una implantación de infraestructura de <em>“Cloud Computing”</em> basada en la solución libre OpenStack.</strong></p></li>
+<li><p>La utilización de la infraestructura de <em>“Cloud Privado”</em> en clase.</p></li>
+<li><p>Formación del profesorado participante en tecnologías de <em>“Cloud Computing”</em>.</p></li>
+<li><p>Elaboración de documentación técnica y manuales para su utilización en distintos módulos de los ciclos de la familia profesional de informática y comunicaciones</p></li>
+</ul>
+<h2 id="escenario-inicial"><a href="#TOC">Escenario inicial</a></h2>
+<p>Como resultado técnico más importante del proyecto anteriormente desarrollado cabe destacar el estudio, análisis y puesta en marcha funcional de un <em>“cloud privado”</em> por cada centro participante.</p>
+<p>Estos <em>“cloud privados”</em> basados en la solución libre OpenStack permiten de forma nativa:</p>
+<ul>
+<li><p>Centralización de máquinas virtuales que pueden albergar tanto sistemas operativos de entornos servidores (Linux Server o Microsoft Windows Server) como sistemas operativos de entornos clientes (Distribuciones Linux de Escritorio o Microsoft Windows Clientes tipo Windows XP, Windows 7, Windows 8...)</p></li>
+<li><p>Acceso directo, por parte de alumnos y profesores desde PC's tradicionales, a las máquinas virtuales gestionadas por OpenStack. Estos accesos permiten a alumnos y profesores, de forma simultánea, la utilización de sistemas operativos de servidores y clientes virtuales con capacidades mucho más potentes que las propias que les ofrecen los equipos físicos de escritorio de los que se disponen habitualmente.</p></li>
+<li><p>Facilidades de gestión centralizada, para los administradores, de los recursos virtualizados y de gestión de plantillas para ofrecer autoprovisionamiento a los usuarios.</p></li>
+</ul>
+<p>Sin embargo actualmente ésta y otras <strong>soluciones libres orientadas a IaaS no cuentan de forma nativa con</strong>:</p>
+<ul>
+<li><p>Infraestructura de gestión integrada y ágil de usuarios y perfiles asociados a recursos virtualizados.</p></li>
+<li><p>Acceso descentralizado a través de soluciones que permitan elección “on the fly” de protocolos de acceso altamente compatibles como VNC, SPICE o Rdesktop. (Actualmente, en estas soluciones, los accesos automáticos a las máquinas virtuales se basan fundamentalmente en protocolo VNC, dejando la utilización de los otros protocolos para escenarios dónde el administrador debe realizar grandes labores de configuración para su utilización).</p></li>
+<li><p>Gestión integral de escritorios virtuales para clientes ligeros VDI.</p></li>
+</ul>
+<p>Esta situación se debe a que las infraestructuras libres IaaS aún centralizando los recursos virtualizados y pudiéndose convertir, a través de tareas de configuración, en plataformas DaaS, no están todavía adaptadas de forma nativa para despliegue completo de infraestructuras VDI.</p>
+</body>
+</html>
