@@ -4,8 +4,8 @@
 ## Marco de realización ##
 El **IES Ingeniero de la Cierva (Murcia)**, a través de su Departamento de Informática y Comunicaciones, durante el curso 2013-2014 ha llevado a cabo este proyecto, denominado **_OpenMurVdi: Despliegue de infraestructura de clientes ligeros orientados a Cloud Computing_**, al amparo de la convocatoria de realización de proyectos de innovación de formación profesional convocada, de forma conjunta por:
 
-  1. La Dirección General de Recursos Humanos y Calidad Educativa
-  2. La Dirección General de Formación Profesional y Enseñanzas de Personas Adultas
+1. La Dirección General de Recursos Humanos y Calidad Educativa
+2. La Dirección General de Formación Profesional y Enseñanzas de Personas Adultas
 
 a través de la _Resolución de 25 de julio de 2013 por la que se regula el proceso de selección y de seguimiento para la realización de proyectos de innovación educativa realizados por el profesorado de formación profesional de la región de Murcia_.
 
