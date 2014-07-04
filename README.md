@@ -1,9 +1,7 @@
 OpenMurVDI-Cloud
 ================
 
-OpenMurVDI-Despliegue de Infraestructura de Clientes Ligeros Orientados a Cloud Computing
-
-(Infraestructura VDI en OpenStack)
+OpenMurVDI-Despliegue de Infraestructura de Clientes Ligeros Orientados a Cloud Computing (OpenStack + VDI)
 
 Este proyecto se alojó finalmente para su publicación en  https://github.com/OpenMurVDI
 
